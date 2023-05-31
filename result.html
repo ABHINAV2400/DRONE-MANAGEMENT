@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drone Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
+        .drone-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            color: white;
+        }
+        .drone-details {
+            text-align: center;
+            margin-right: 30px;
+        }
+        .drone-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .score-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .score-item {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Best Drone Models and Scores</h1>
+    <div class="drone-container">
+        <div class="drone-details">
+            <p class="drone-name">Best Drone Model:</p>
+            <div class="score-list">
+                <p class="score-item">{{ best_drone }}</p>
+                <p class="score-item">Score: {{ score }}</p>
+            </div>
+        </div>
+        <div class="drone-details">
+            <p class="drone-name">Second Best Drone Model:</p>
+            <div class="score-list">
+                <p class="score-item">{{ second_best_drone }}</p>
+                <p class="score-item">Score: {{ second_score }}</p>
+            </div>
+        </div>
+        <div class="drone-details">
+            <p class="drone-name">Third Best Drone Model:</p>
+            <div class="score-list">
+                <p class="score-item">{{ third_best_drone }}</p>
+                <p class="score-item">Score: {{ third_score }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

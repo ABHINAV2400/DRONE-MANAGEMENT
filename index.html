@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drone Specifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, #1a1a1a, #333);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: white;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #666;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #333;
+            color: white;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: linear-gradient(to bottom, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(to bottom, #45a049, #3d8740);
+        }
+    </style>
+</head>
+<body>
+    <h1>Drone Specifications</h1>
+    <form method="POST" action="/result">
+        {% for criteria in features.columns %}
+        <label for="{{ criteria }}">{{ criteria }}:</label>
+        <input type="number" step="0.01" id="{{ criteria }}" name="{{ criteria }}" value="0"><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
